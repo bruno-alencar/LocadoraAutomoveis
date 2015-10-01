@@ -1,0 +1,33 @@
+@CHARSET "utf-8";
+
+body{text-align:center;}
+header{
+}
+
+fieldset {
+	width:480px;
+	margin:auto;
+	margin-top:100px;
+}
+
+@media all and (min-width:960px){
+	body{
+		width: 960px;
+		margin:auto;
+	}
+}
+
+@media all and(max-width:480px){
+	
+}
+/* @media all and(max-width:480px){ */
+/* 	nav{ */
+/* 		height: 100%; */
+/* 	} */
+
+/* 	nav li{ */
+/* 		display: block; */
+/* 		padding: 10px; */
+/* 		margin: 0px; */
+/* 	} */
+/* } */

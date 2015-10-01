@@ -4,17 +4,10 @@ import br.usjt.arqdesis.model.Usuario;
 
 public class UsuarioDao {
 	
-	private static final String SQLValidarUsuario="";
-	private static final String SQLSelectTipoUsuario = "";
+	private static final String SQLValidarUsuario="select * from login where usuario= '(?)' and senha = '(?)'";
 	
-	public boolean consultar(Usuario usuario){
+	public boolean validarUsuario(Usuario usuario){
 		
-		
-		this.consultarTipoUsuario();
 		return true;
-	}
-	
-	public void consultarTipoUsuario(){
-		
 	}
 }

@@ -34,13 +34,11 @@ public class Login extends HttpServlet {
 		usuario.setSenha(senha);
 		
 		UsuarioTo usuarioTo = new UsuarioTo();
-		boolean teste = usuarioTo.validarLogin(usuario);
+		boolean teste = usuarioTo.validarUsuario(usuario);
 		
-		RequestDispatcher view = request.getRequestDispatcher("home.jsp");
-		view.forward(request, response);
 		if(teste == true){
-//			RequestDispatcher view = request.getRequestDispatcher("home.jsp");
-//			view.forward(request, response);
+			RequestDispatcher view = request.getRequestDispatcher("home.jsp");
+			view.forward(request, response);
 		}
 	}
 

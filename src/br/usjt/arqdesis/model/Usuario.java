@@ -23,6 +23,10 @@ public class Usuario {
 	public void setTipo_usuario(TipoUsuario tipo_usuario) {
 		this.tipo_usuario = tipo_usuario;
 	}
+	@Override
+	public String toString() {
+		return "Usuario [login=" + login + ", senha=" + senha + ", tipo_usuario=" + tipo_usuario + "]";
+	}
 	
 	
 }

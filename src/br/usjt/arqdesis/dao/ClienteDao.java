@@ -112,7 +112,7 @@ public class ClienteDao {
 		return listaClientes;
 	}
 	
-	public boolean validarClienteLocacao(Cliente cliente){
+	private boolean validarClienteLocacao(Cliente cliente){
 		PreparedStatement stmt;
 		ResultSet rs;
 		boolean validador = false;

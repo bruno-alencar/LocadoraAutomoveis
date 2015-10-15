@@ -10,6 +10,7 @@ public class Automovel {
 	private String fabricante;
 	private double tarifa_km_livre;
 	private double tarifa_km_controlado;
+	
 	public String getChassi() {
 		return chassi;
 	}

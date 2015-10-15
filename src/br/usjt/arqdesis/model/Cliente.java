@@ -1,6 +1,6 @@
 package br.usjt.arqdesis.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Cliente {
 	private String nome;
@@ -9,10 +9,11 @@ public class Cliente {
 	private int telefone;
 	private String email;
 	private Date data_nascimento;
-	private char sexo;
+	private String sexo;
 	private int cnh;
 	private String estado_emissor_cnh;
 	private Date validade_cnh;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -49,10 +50,10 @@ public class Cliente {
 	public void setData_nascimento(Date data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
-	public char getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 	public int getCnh() {
@@ -75,10 +76,11 @@ public class Cliente {
 	}
 	@Override
 	public String toString() {
-		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", telefone=" + telefone + ", email=" + email
-				+ ", data_nascimento=" + data_nascimento + ", sexo=" + sexo + ", cnh=" + cnh + ", estado_emissor_cnh="
-				+ estado_emissor_cnh + ", validade_cnh=" + validade_cnh + "]";
+		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", rg=" + rg
+				+ ", telefone=" + telefone + ", email=" + email
+				+ ", data_nascimento=" + data_nascimento + ", sexo=" + sexo
+				+ ", cnh=" + cnh + ", estado_emissor_cnh=" + estado_emissor_cnh
+				+ ", validade_cnh=" + validade_cnh + "]";
 	}
-	
 	
 }

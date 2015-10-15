@@ -1,7 +1,5 @@
 package br.usjt.arqdesis.model;
 
-import java.sql.Time;
-
 import com.sun.jmx.snmp.Timestamp;
 
 public class Locacao {
@@ -16,6 +14,7 @@ public class Locacao {
 	private Cliente cliente;
 	private Automovel automovel;
 	private Grupo grupo;
+	
 	public Timestamp getData_locacao() {
 		return data_locacao;
 	}

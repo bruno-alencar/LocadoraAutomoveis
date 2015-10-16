@@ -3,6 +3,8 @@ package br.usjt.arqdesis.model;
 import java.sql.Date;
 
 public class Cliente {
+	
+	private Long codigo;
 	private String nome;
 	private int cpf;
 	private int rg;
@@ -14,6 +16,14 @@ public class Cliente {
 	private String estado_emissor_cnh;
 	private Date validade_cnh;
 	
+	
+	
+	public Long getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
 	public String getNome() {
 		return nome;
 	}

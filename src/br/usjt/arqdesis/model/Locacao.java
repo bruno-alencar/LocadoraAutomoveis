@@ -1,8 +1,10 @@
 package br.usjt.arqdesis.model;
 
-import com.sun.jmx.snmp.Timestamp;
+import java.sql.Timestamp;
+import java.util.List;
 
 public class Locacao {
+	private Long codigo;
 	private Timestamp data_locacao;
 	private String local_locacao;
 	private Timestamp data_prevista_devolucao;
@@ -14,7 +16,14 @@ public class Locacao {
 	private Cliente cliente;
 	private Automovel automovel;
 	private Grupo grupo;
+	private List<Acessorio> listaAcessorios;
 	
+	public Long getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
 	public Timestamp getData_locacao() {
 		return data_locacao;
 	}
@@ -81,13 +90,21 @@ public class Locacao {
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
 	}
+	public List<Acessorio> getListaAcessorios() {
+		return listaAcessorios;
+	}
+	public void setListaAcessorios(List<Acessorio> listaAcessorios) {
+		this.listaAcessorios = listaAcessorios;
+	}
+	
 	@Override
 	public String toString() {
 		return "Locacao [data_locacao=" + data_locacao + ", local_locacao=" + local_locacao
 				+ ", data_prevista_devolucao=" + data_prevista_devolucao + ", local_previsto_devolucao="
 				+ local_previsto_devolucao + ", data_devolucao=" + data_devolucao + ", local_devolucao="
 				+ local_devolucao + ", tipo_tarifa=" + tipo_tarifa + ", valor_estimado=" + valor_estimado + ", cliente="
-				+ cliente + ", automovel=" + automovel + ", grupo=" + grupo + "]";
+				+ cliente + ", automovel=" + automovel + ", grupo=" + grupo + ", listaAcessorios=" + listaAcessorios
+				+ "]";
 	}
 	
 	

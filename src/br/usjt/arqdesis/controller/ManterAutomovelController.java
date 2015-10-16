@@ -12,13 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import br.usjt.arqdesis.model.Automovel;
 import br.usjt.arqdesis.to.AutomovelTo;
 
-@WebServlet("/veiculo.do")
+@WebServlet("/automovel.do")
 public class ManterAutomovelController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		AutomovelTo automovelTo = new AutomovelTo();
+		request.setAttribute("listaAutomoveis", automovelTo.consultAll());
+		
+		RequestDispatcher view = request.getRequestDispatcher("consultarVeiculo.jsp");
+		view.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

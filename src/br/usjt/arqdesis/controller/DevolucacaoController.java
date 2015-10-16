@@ -26,7 +26,7 @@ public class DevolucacaoController extends HttpServlet {
 		locacao.setCodigo(Long.parseLong(codigo_locacao));
 		
 		LocacaoTo locacaoTo = new LocacaoTo();
-		locacaoTo.consult(locacao);
+		locacao = locacaoTo.consult(locacao);
 	}
 
 }

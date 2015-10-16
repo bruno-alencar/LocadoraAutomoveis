@@ -54,7 +54,7 @@ public class LocacaoDao {
 		}
 	}
 	
-	public void consult(Locacao locacao){
+	public Locacao consult(Locacao locacao){
 		con = ConnectionFactory.conect();
 		PreparedStatement stmt;
 		ResultSet rs;
@@ -86,7 +86,7 @@ public class LocacaoDao {
 			ConnectionFactory.disconnect(con);
 		}
 		
-		
+		return locacao;
 	}
 	
 	private void insertTipoAcessorios(Locacao locacao){

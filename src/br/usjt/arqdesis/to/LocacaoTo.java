@@ -10,8 +10,8 @@ public class LocacaoTo{
 		locacaoDao.locar(locacao);
 	}
 	
-	public void consult(Locacao locacao){
+	public Locacao consult(Locacao locacao){
 		LocacaoDao locacaoDao = new LocacaoDao();
-		locacaoDao.consult(locacao);
+		return locacaoDao.consult(locacao);
 	}
 }

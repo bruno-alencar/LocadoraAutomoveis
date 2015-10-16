@@ -14,7 +14,7 @@ public class LocacaoDao {
 												 + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SQLInsertTipoAcessorio = "INSERT INTO tipoAcessorio(codigo_locacao, codigo_acessorio)"
 														+"VALUES (?,?)";
-
+	private static final String SQLSelectLocacao = "SELECT * FROM locacao WHERE codigo = (?)";
 	Connection con;
 
 	public void locar(Locacao locacao){
@@ -52,6 +52,41 @@ public class LocacaoDao {
 		}finally{
 			ConnectionFactory.disconnect(con);
 		}
+	}
+	
+	public void consult(Locacao locacao){
+		con = ConnectionFactory.conect();
+		PreparedStatement stmt;
+		ResultSet rs;
+		try {
+			stmt = con.prepareStatement(SQLSelectLocacao);
+			stmt.setLong(1, locacao.getCodigo());
+			
+			rs = stmt.executeQuery();
+			
+			if(rs.next()){
+				locacao.setData_locacao(rs.getTimestamp(1));
+				locacao.setLocal_locacao(rs.getString(2));
+				locacao.setData_prevista_devolucao(rs.getTimestamp(3));
+				locacao.setLocal_previsto_devolucao(rs.getString(4));
+				locacao.setData_devolucao(rs.getTimestamp(5));
+				locacao.setLocal_devolucao(rs.getString(6));
+				locacao.setTipo_tarifa(rs.getString(7));
+				locacao.setValor_estimado(rs.getDouble(8));
+				locacao.getCliente().setCodigo(rs.getLong(9));
+				locacao.getAutomovel().setCodigo(rs.getLong(10));
+				locacao.getGrupo().setCodigo(rs.getLong(11));
+			}
+			
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			ConnectionFactory.disconnect(con);
+		}
+		
+		
 	}
 	
 	private void insertTipoAcessorios(Locacao locacao){

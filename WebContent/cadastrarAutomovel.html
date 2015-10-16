@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastrar Automóvel</title>
+<link rel="stylesheet" type="text/css" href="css/style-menu.css">
+</head>
+<body>
+	<header>
+		<h1>Cadastrar Automóvel</h1>
+	</header>
+	<nav>
+		<ul class="menu clearfix">
+			<li><a href="#">Automóvel</a>
+
+				<ul class="sub-menu clearfix">
+					<li><a href="cadastrarVeiculo.html">Cadastrar</a></li>
+					<li><a href="automovel.do">Consultar</a></li>
+					<li><a href="#">Alterar</a></li>
+					<li><a href="#">Deletar</a></li>
+				</ul></li>
+			<li><a href="">Cliente</a>
+
+				<ul class="sub-menu clearfix">
+					<li><a href="#">Cadastrar</a></li>
+					<li><a href="#">Consultar</a></li>
+					<li><a href="#">Alterar</a></li>
+					<li><a href="#">Deletar</a></li>
+				</ul></li>
+			<li><a href="">Locação</a>
+
+				<ul class="sub-menu clearfix">
+					<li><a href="#">Locar</a></li>
+					<li><a href="#">Devolver</a></li>
+				</ul></li>
+		</ul>
+	</nav>
+	<article style="padding-top: 20px;">
+		<fieldset style="width:500px;">
+			<legend>Dados do Veículo</legend>
+			<form action="automovel.do" method="post">
+				<table>
+					<tr>
+						<td><b>Chassi:</b></td>
+						<td><input type="text" required="required" name="chassi"
+							placeholder="Insira o Chassi" /></td>
+					</tr>
+					<tr>
+						<td><b>Placa:</b></td>
+						<td><input type="text" required="required" name="placa"
+							placeholder="Insira a Placa" /></td>
+					</tr>
+					<tr>
+						<td><b>Cidade:</b></td>
+						<td><input type="text" required="required" name="cidade"
+							placeholder="Insira a Cidade" /></td>
+					</tr>
+					<tr>
+						<td><b>Km:</b></td>
+						<td><input type="text" required="required" name="km"
+							pattern="[0-9]+$" placeholder="Insira o Km Ex:123456" /></td>
+					</tr>
+					<tr>
+						<td><b>Estado:</b></td>
+						<td><input type="text" required="required" name="estado"
+							placeholder="Insira o Estado"></td>
+					</tr>
+					<tr>
+						<td><b>Modelo:</b></td>
+						<td><input type="text" required="required" name="modelo"
+							placeholder="Insira o Modelo" /></td>
+					</tr>
+					<tr>
+						<td><b>fabricante:</b></td>
+						<td><input type="text" required="required" name="fabricante"
+							placeholder="Insira o Fabricante" /></td>
+					</tr>
+					<tr>
+						<td><b>Tarifa do Km Livre:</b></td>
+						<td><input type="text" required="required"
+							name="tarifa_km_livre"
+							pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$"
+							placeholder="Insira a Tarifa Ex:10,10" /></td>
+					</tr>
+					<tr>
+						<td><b>Tarifa do Km Controlado</b></td>
+						<td><input type="text" required="required"
+							name="tarifa_km_controlado"
+							pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$"
+							placeholder="Insira a Tarifa Ex:10,10" /></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Cadastrar"></td>
+					</tr>
+				</table>
+			</form>
+		</fieldset>
+	</article>
+</body>
+</html>

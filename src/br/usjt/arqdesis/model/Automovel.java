@@ -1,6 +1,7 @@
 package br.usjt.arqdesis.model;
 
 public class Automovel {
+	private Long codigo;
 	private String chassi;
 	private String placa;
 	private String cidade;
@@ -10,6 +11,14 @@ public class Automovel {
 	private String fabricante;
 	private double tarifa_km_livre;
 	private double tarifa_km_controlado;
+	
+	
+	public Long getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
 	public String getChassi() {
 		return chassi;
 	}

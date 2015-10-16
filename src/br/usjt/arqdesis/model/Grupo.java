@@ -1,8 +1,17 @@
 package br.usjt.arqdesis.model;
 
 public class Grupo {
+	private Long codigo;
 	private String nome;
 	private char sigla;
+	
+	
+	public Long getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
 	public String getNome() {
 		return nome;
 	}

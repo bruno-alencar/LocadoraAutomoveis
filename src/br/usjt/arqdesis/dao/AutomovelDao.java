@@ -83,15 +83,16 @@ public class AutomovelDao {
 			
 			while(rs.next()){
 				Automovel automovel = new Automovel();
-				automovel.setChassi(rs.getString(1));
-				automovel.setPlaca(rs.getString(2));
-				automovel.setCidade(rs.getString(3));
-				automovel.setKm(rs.getInt(4));
-				automovel.setEstado(rs.getString(5));
-				automovel.setModelo(rs.getString(6));
-				automovel.setFabricante(rs.getString(7));
-				automovel.setTarifa_km_livre(rs.getDouble(8));
-				automovel.setTarifa_km_controlado(rs.getDouble(9));
+				automovel.setCodigo(Long.parseLong(rs.getString(1)));
+				automovel.setChassi(rs.getString(2));
+				automovel.setPlaca(rs.getString(3));
+				automovel.setCidade(rs.getString(4));
+				automovel.setKm(rs.getInt(5));
+				automovel.setEstado(rs.getString(6));
+				automovel.setModelo(rs.getString(7));
+				automovel.setFabricante(rs.getString(8));
+				automovel.setTarifa_km_livre(rs.getDouble(9));
+				automovel.setTarifa_km_controlado(rs.getDouble(10));
 				
 				listaAutomoveis.add(automovel);
 			}

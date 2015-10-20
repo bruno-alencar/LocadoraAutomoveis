@@ -21,7 +21,7 @@ public class ManterAutomovelController extends HttpServlet {
 		AutomovelTo automovelTo = new AutomovelTo();
 		request.setAttribute("listaAutomoveis", automovelTo.consultAll());
 		
-		RequestDispatcher view = request.getRequestDispatcher("consultarVeiculo.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("consultarAutomovel.jsp");
 		view.forward(request, response);
 	}
 

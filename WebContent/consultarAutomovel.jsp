@@ -40,8 +40,9 @@
 		</ul>
 	</nav>
 	
-	<article>
-		<table>
+	<article style="padding-top: 10px;">
+		<table border="2px">
+			<th></th>
 			<th>Chassi</th>
 			<th>Placa</th>
 			<th>Cidade</th>
@@ -56,6 +57,7 @@
 				for(Automovel automovel: listaAutomoveis){
 			%>
 				<tr>
+					<td><input type="radio" name="automovel" value="${automovel.getCodigo()}"></td>
 					<td><%= automovel.getChassi() %></td>
 					<td><%= automovel.getPlaca() %></td>
 					<td><%= automovel.getCidade() %></td>
@@ -72,6 +74,8 @@
 			
 		</table>
 	</article>
-	
+		
+		
+		<a href=""><button id="alterar" value="automovel.">Alterar</button></a>
 </body>
 </html>

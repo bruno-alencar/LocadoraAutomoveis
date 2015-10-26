@@ -18,7 +18,7 @@
 			<li><a href="#">Automóvel</a>
 
 				<ul class="sub-menu clearfix">
-					<li><a href="cadastrarVeiculo.html">Cadastrar</a></li>
+					<li><a href="cadastrarAutomovel.html">Cadastrar</a></li>
 					<li><a href="automovel.do">Consultar</a></li>
 					<li><a href="#">Alterar</a></li>
 					<li><a href="#">Deletar</a></li>
@@ -76,6 +76,6 @@
 	</article>
 		
 		
-		<a href=""><button id="alterar" value="automovel.">Alterar</button></a>
+		<button onclick="javascript:location.document='alterarAutomovel.jsp?'">Alterar</button>
 </body>
 </html>

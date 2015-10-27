@@ -41,6 +41,8 @@
 	</nav>
 	
 	<article style="padding-top: 10px;">
+	
+	<form action="automovel.do" method="POST">
 		<table border="2px">
 			<th></th>
 			<th>Chassi</th>
@@ -71,11 +73,17 @@
 			<%
 				}
 			%>
-			
+			<tr>
+				<td><input type="submit"  onclick="option=alterar"></td>
+				<td><input type="submit"  onclick="option=excluir"></td>
+<!-- 				<button onclick="javascript:location.document='alterarAutomovel.jsp?option=alterar">Alterar</button> -->
+			</tr>
 		</table>
+		</form>
 	</article>
 		
 		
-		<button onclick="javascript:location.document='alterarAutomovel.jsp?'">Alterar</button>
+		
+		
 </body>
 </html>

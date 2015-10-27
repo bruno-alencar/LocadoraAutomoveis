@@ -20,6 +20,7 @@ public class AutomovelDao {
 														  + "ON l.automovel = a.codigo"
 														  + "WHERE l.automovel = (?)";
 	private static final String SQLDeleteAutomovel = "DELETE FROM automovel where chassi = (?)";
+	private static final String SQLSelectWithCod = "SELECT * FROM automovel WHERE codigo = (?)";
 	Connection con;
 
 
@@ -46,6 +47,40 @@ public class AutomovelDao {
 		}finally{
 			ConnectionFactory.disconnect(con);
 		}
+	}
+	
+	public Automovel consultWithCod(Long codigo){
+		con = ConnectionFactory.conect();
+		
+		PreparedStatement stmt;
+		ResultSet rs;
+		Automovel automovel = new Automovel();
+		
+		try {
+			stmt = con.prepareStatement(SQLSelectWithCod);
+			stmt.setLong(1, codigo);
+			
+			rs = stmt.executeQuery();
+			
+			if(rs.next()){
+				automovel.setCodigo(rs.getLong(1));
+				automovel.setChassi(rs.getString(2));
+				automovel.setPlaca(rs.getString(3));
+				automovel.setCidade(rs.getString(4));
+				automovel.setKm(rs.getInt(5));
+				automovel.setEstado(rs.getString(6));
+				automovel.setModelo(rs.getString(7));
+				automovel.setFabricante(rs.getString(8));
+				automovel.setTarifa_km_livre(rs.getDouble(9));
+				automovel.setTarifa_km_controlado(rs.getDouble(10));
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			
+		return automovel;
 	}
 
 	public void update(Automovel automovel){

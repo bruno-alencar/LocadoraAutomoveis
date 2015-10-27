@@ -26,6 +26,31 @@ public class ManterAutomovelController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String opcao = request.getParameter("opcao");
+		
+		if(opcao.equals("alterar")){
+			
+		}else if(opcao.equals("consultarTodos")){
+			this.consultAll(request, response);
+		}else if(opcao.equals("consultarEspecifica")){
+			
+		}
+	}
+	
+	protected void alterar(HttpServletRequest request, HttpServletResponse response){
+		String codAutomovel = request.getParameter("automovel");
+		
+		
+		AutomovelTo automovelTo = new AutomovelTo();
+		
+		Automovel automovel = automovelTo.consult(Long.parseLong(codAutomovel));
+		
+		
+		
+	}
+	
+	protected void consultAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String chassi = request.getParameter("chassi");
 		String placa = request.getParameter("placa");
 		String cidade = request.getParameter("cidade");
@@ -54,18 +79,18 @@ public class ManterAutomovelController extends HttpServlet {
 		view.forward(request, response);
 	}
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	 //Alterar automovel
-	}
-
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String chassi = request.getParameter("chassi");
-		
-		Automovel automovel = new Automovel();
-		automovel.setChassi(chassi);
-		
-		AutomovelTo automovelTo = new AutomovelTo();
-		automovelTo.delete(automovel);
-	}
+//	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//	 //Alterar automovel
+//	}
+//
+//	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		String chassi = request.getParameter("chassi");
+//		
+//		Automovel automovel = new Automovel();
+//		automovel.setChassi(chassi);
+//		
+//		AutomovelTo automovelTo = new AutomovelTo();
+//		automovelTo.delete(automovel);
+//	}
 
 }

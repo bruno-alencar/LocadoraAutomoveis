@@ -21,6 +21,11 @@ public class AutomovelTo {
 		automovelDao.delete(automovel);
 	}
 	
+	public Automovel consult(Long codigo){
+		AutomovelDao automovelDao = new AutomovelDao();
+		return automovelDao.consultWithCod(codigo);
+	}
+	
 	public List<Automovel> consultAll(){
 		AutomovelDao automovelDao = new AutomovelDao();
 		return automovelDao.consultAll();
